@@ -1,0 +1,11 @@
+scrape_configs:
+  - job_name: Staging-api node
+    scrape_interval: 5s
+    static_configs:
+    - targets: ['157.245.121.175:9100']
+rule_files:
+    - './connection.yml'
+alerting:
+  alertmanagers:
+  - static_configs:
+    - targets: ['localhost:9093']
